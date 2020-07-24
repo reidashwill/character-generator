@@ -11,16 +11,16 @@ function NewCharacterForm(props){
     event.preventDefault();
     setform(!visibleForm);
     return firestore.collection('characters').add({
-        characterName: event.target.name.value,
-        characterRace: event.target.race.value,
+        name: event.target.name.value,
+        race: event.target.race.value,
         characterClass: event.target.characterClass.value,
-        characterLvl: parseInt(event.target.lvl.value),
-        characterStr: parseInt(event.target.str.value),
-        characterDex: parseInt(event.target.dex.value),
-        characterCon: parseInt(event.target.con.value),
-        characterInt: parseInt(event.target.int.value),
-        characterWis: parseInt(event.target.wis.value),
-        characterCha: parseInt(event.target.cha.value)
+        lvl: parseInt(event.target.lvl.value),
+        str: parseInt(event.target.str.value),
+        dex: parseInt(event.target.dex.value),
+        con: parseInt(event.target.con.value),
+        int: parseInt(event.target.int.value),
+        wis: parseInt(event.target.wis.value),
+        cha: parseInt(event.target.cha.value)
       });
   }
   return(
