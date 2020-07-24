@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import CharacterList from './CharacterList'
-import firebase from 'firebase';
+import NewCharacterForm from './NewCharacterForm'
 import { withFirestore, isLoaded } from 'react-redux-firebase';
+import firebase from '../firebase';
 
 
 function CharacterControl(){
@@ -14,14 +15,14 @@ function CharacterControl(){
   function returnToList(){
       setForm(!visibleForm);
     }
-  
 
-  {currentlyVisibleState = <CharacterList
-    setSelectedCharacter={setSelectedCharacter}
-    selectedCharacter={selectedCharacterId} />
-    buttonText = "Add Character"                          
+  if(visibleForm === true){
+    currentlyVisibleState = <NewCharacterForm setform={setForm} visibleForm={visibleForm} />
+    buttonText= "return to character list"
+  }else{
+    currentlyVisibleState = <CharacterList/>
+    buttonText = "Create New Character"
   }
-  
   return(
     <React.Fragment>
       {currentlyVisibleState}
@@ -30,4 +31,4 @@ function CharacterControl(){
   )
 }
 
-export default CharacterControl;
+export default withFirestore(CharacterControl);
