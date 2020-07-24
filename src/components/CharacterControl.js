@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import CreateCharacterButton from './CreateCharacterButton'
+import CreateCharacter from './CreateCharacter'
+
 
 
 function CharacterControl(){
 
   const [createButton, setCreateButton] = useState(true);
-  const [visibleState, setVisibleState] = useState(<CreateCharacterButton/>)
+  const [visibleState, setVisibleState] = useState(<CreateCharacter/>)
   
   return(
     <React.Fragment>
