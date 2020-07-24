@@ -5,8 +5,22 @@ function ReusableForm(props){
   return(
     <React.Fragment>
       <form onSubmit ={props.formSubmissionHandler}>
-        <input type='text' name='name' placeholder='Character Name' />
-        <input type='text' name='characterClass' placeholder='Character Class' />
+        <input type='text' name='name' placeholder='Character Name' /><br/>
+        <label>Class </label>
+        <select name='characterClass'>
+          <option value="Barbarian">Barbarian</option>
+          <option value="Bard">Bard</option>
+          <option value="Cleric">Cleric</option>
+          <option value="Druid">Druid</option>
+          <option value="Fighter">Fighter</option>
+          <option value="Monk">Monk</option>
+          <option value="Paladin">Paladin</option>
+          <option value="Ranger">Ranger</option>
+          <option value="Rouge">Rouge</option>
+          <option value="Sorcerer">Sorcerer</option>
+          <option value="Warlock">Warlock</option>
+          <option value="Wizard">Wizard</option>
+        </select><br/>
         <input type='text' name='race' placeholder='Character Race' />
         <input type='number' name='lvl' placeholder='Character Level' />
         <input type='number' name='str' placeholder='Strength' />
