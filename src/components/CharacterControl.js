@@ -1,18 +1,32 @@
 import React, {useState} from 'react';
-import CreateCharacter from './CreateCharacter'
-
+import CharacterList from './CharacterList'
+import firebase from 'firebase';
+import { withFirestore, isLoaded } from 'react-redux-firebase';
 
 
 function CharacterControl(){
+  let currentlyVisibleState = null
+  let buttonText = null
+  const [editing, setEditing] = useState(false)
+  const [selectedCharacterId, setSelectedCharacter] = useState(null)
+  const [visibleForm, setForm] = useState(false);
 
-  const [createButton, setCreateButton] = useState(true);
-  const [visibleState, setVisibleState] = useState(<CreateCharacter/>)
+  function returnToList(){
+      setForm(!visibleForm);
+    }
+  
+
+  {currentlyVisibleState = <CharacterList
+    setSelectedCharacter={setSelectedCharacter}
+    selectedCharacter={selectedCharacterId} />
+    buttonText = "Add Character"                          
+  }
   
   return(
     <React.Fragment>
-      {visibleState}
+      {currentlyVisibleState}
+      <button onClick={ () => returnToList() }>{buttonText}</button>
     </React.Fragment>
-
   )
 }
 
