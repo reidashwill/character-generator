@@ -21,17 +21,15 @@ function CharacterDetail(props) {
   ) 
   return ( 
     <React.Fragment>
-      <h1>Character Name: {character.name}</h1>
-      {/* <LargeText>Race: {character.characterRace}</LargeText>
-      <LargeText>Class: {character.characterClass}</LargeText>
-      <LargeText>Level: {character.characterLvl}</LargeText>
-      <MediumText>STR: {character.characterStr}</MediumText>
-      <MediumText>DEX: {character.characterDex}</MediumText>
-      <MediumText>CON: {character.characterCon}</MediumText>
-      <MediumText>INT: {character.characterInt}</MediumText>
-      <MediumText>WIS: {character.characterWis}</MediumText>
-      <MediumText>CHA: {character.characterCha}</MediumText>
-      <Button onClick={ () => setEditing(!editing)}>Edit Character</Button> */}
+      <h1>Name: {character.name}</h1>
+      <h3>Class: {character.characterClass}</h3>
+      <h3>Race: {character.race}</h3>
+      <h3>Strength: {character.str}</h3>
+      <h3>Dexterity: {character.dex}</h3>
+      <h3>Constitution {character.con}</h3>
+      <h3>Intelligence: {character.int}</h3>
+      <h3>Wisdom: {character.wis}</h3>
+      <h3>Charisma: {character.cha}</h3>
       <button onClick={ () => handleDeletingCharacter(selectedCharacter)}>Delete Character</button>
     </React.Fragment>
   );
