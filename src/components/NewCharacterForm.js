@@ -10,7 +10,9 @@ function NewCharacterForm(props){
   function addCharacterToFirestore(event) {
     event.preventDefault();
     setform(!visibleForm);
-    return firestore.collection('characters').add({
+
+    if(event.target.race.value == "Human"){
+      return firestore.collection('characters').add({
         name: event.target.name.value,
         race: event.target.race.value,
         characterClass: event.target.characterClass.value,
@@ -20,8 +22,22 @@ function NewCharacterForm(props){
         con: parseInt(event.target.con.value),
         int: parseInt(event.target.int.value),
         wis: parseInt(event.target.wis.value),
-        cha: parseInt(event.target.cha.value)
+        cha: parseInt(event.target.cha.value) + 1
       });
+    }else{
+      return firestore.collection('characters').add({
+          name: event.target.name.value,
+          race: event.target.race.value,
+          characterClass: event.target.characterClass.value,
+          lvl: parseInt(event.target.lvl.value),
+          str: parseInt(event.target.str.value),
+          dex: parseInt(event.target.dex.value),
+          con: parseInt(event.target.con.value),
+          int: parseInt(event.target.int.value),
+          wis: parseInt(event.target.wis.value),
+          cha: parseInt(event.target.cha.value)
+        });
+      }
   }
   return(
     <React.Fragment>
