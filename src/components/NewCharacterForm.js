@@ -22,23 +22,23 @@ function NewCharacterForm(props){
     let speed = 30
 
     // SKILL PROFICIENCIES ----------------------------------------------
-    let acrobatics = false
-    let animalHandling = false
-    let arcana = false
-    let athletics = false
-    let deception = false
-    let history = false
-    let insight = false
-    let intimidation = false
-    let investigation = false
-    let medicine = false
-    let nature = false
-    let perception = false
-    let persuasion = false
-    let religion = false
-    let sleightOfHand = false
-    let stealth = false
-    let survival = false
+    let acrobatics = 0
+    let animalHandling = 0
+    let arcana = 0
+    let athletics = 0
+    let deception = 0
+    let history = 0
+    let insight = 0
+    let intimidation = 0
+    let investigation = 0
+    let medicine = 0
+    let nature = 0
+    let perception = 0
+    let persuasion = 0
+    let religion = 0
+    let sleightOfHand = 0
+    let stealth = 0
+    let survival = 0
     
     if(race === 'Human'){
       str ++
@@ -73,8 +73,8 @@ function NewCharacterForm(props){
     }
 
     if (background === "Acolyte"){
-      insight = true
-      religion = 2
+      insight += 2
+      religion += 2
     }
     
 
@@ -100,6 +100,7 @@ function NewCharacterForm(props){
 
  return(
     <React.Fragment>
+      <ReusableForm
         formSubmissionHandler={addCharacterToFirestore}
         buttonText="Add Character" />
     </React.Fragment>
