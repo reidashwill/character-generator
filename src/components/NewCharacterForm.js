@@ -169,14 +169,47 @@ function NewCharacterForm(props){
     if(characterClass ==='Barbarian'){
       hitDie = 12
       hp = (hitDie + conMod)
+    }else if(characterClass ==='Bard'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Cleric'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Druid'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Fighter'){
+      hitDie = 10
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Monk'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Paladin'){
+      hitDie = 10
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Ranger'){
+      hitDie = 10
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Rouge'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Sorcerer'){
+      hitDie = 6
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Warlock'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Wizard'){
+      hitDie = 6
+      hp = (hitDie + conMod)
     }
 
     return firestore.collection('characters').add({
       name: event.target.name.value,
       race: race,
-      characterClass: event.target.characterClass.value,
+      characterClass: characterClass,
       lvl: parseInt(event.target.lvl.value),
-      background: event.target.background.value,
+      background: background,
       hitDie: hitDie,
       hp: hp,
       str: str,
