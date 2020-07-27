@@ -31,6 +31,7 @@ function CharacterDetail(props) {
       <h3>Intelligence: {character.int}</h3>
       <h3>Wisdom: {character.wis}</h3>
       <h3>Charisma: {character.cha}</h3>
+      <h3>Speed: {character.speed}</h3>
       <button onClick={ () => handleDeletingCharacter(selectedCharacter)}>Delete Character</button>
     </React.Fragment>
   );

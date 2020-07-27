@@ -21,7 +21,7 @@ function ReusableForm(props){
           <option value="Warlock">Warlock</option>
           <option value="Wizard">Wizard</option>
         </select><br/>
-        <label>Class </label>
+        <label>Race </label>
         <select name='race'>
           <option value="Dragonborn">Dragonborn</option>
           <option value="Dwarf">Dwarf</option>
