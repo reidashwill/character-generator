@@ -33,6 +33,25 @@ function ReusableForm(props){
           <option value="Human">Human</option>
           <option value="Tiefling">Tiefling</option>
         </select><br/>
+        <label>Background </label>
+        <select name='background'>
+          <option value="Acolyte">Acolyte</option>
+          <option value="Charlatan">Charlatan</option>
+          <option value="Criminal">Criminal</option>
+          <option value="Entertainer">Entertainer</option>
+          <option value="Folk Hero">Folk Hero</option>
+          <option value="Gladiator">Gladiator</option>
+          <option value="Guild Merchant">Guild Merchant</option>
+          <option value="Hermit">Hermit</option>
+          <option value="Knight">Knight</option>
+          <option value="Noble">Noble</option>
+          <option value="Outlander">Outlander</option>
+          <option value="Pirate">Pirate</option>
+          <option value="Sage">Sage</option>
+          <option value="Sailor">Sailor</option>
+          <option value="Soldier">Soldier</option>
+          <option value="Urchin">Urchin</option>       
+        </select><br/>
         <label>Level </label>
         <select name='lvl'>
           <option value="1">1</option>

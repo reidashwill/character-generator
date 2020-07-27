@@ -12,6 +12,7 @@ function NewCharacterForm(props){
     setform(!visibleForm);
     
     let race = event.target.race.value
+    let background = event.target.background.value
     let str = parseInt(event.target.str.value)
     let dex = parseInt(event.target.str.value)
     let con = parseInt(event.target.str.value)
@@ -19,9 +20,26 @@ function NewCharacterForm(props){
     let wis = parseInt(event.target.str.value)
     let cha = parseInt(event.target.str.value)
     let speed = 30
-    let character= {
-      race: event.target.race.value
-    }
+
+    // SKILL PROFICIENCIES ----------------------------------------------
+    let acrobatics = false
+    let animalHandling = false
+    let arcana = false
+    let athletics = false
+    let deception = false
+    let history = false
+    let insight = false
+    let intimidation = false
+    let investigation = false
+    let medicine = false
+    let nature = false
+    let perception = false
+    let persuasion = false
+    let religion = false
+    let sleightOfHand = false
+    let stealth = false
+    let survival = false
+    
     if(race === 'Human'){
       str ++
       dex ++
@@ -54,24 +72,34 @@ function NewCharacterForm(props){
       cha += 2
     }
 
+    if (background === "Acolyte"){
+      insight = true
+      religion = 2
+    }
+    
+
     return firestore.collection('characters').add({
-        name: event.target.name.value,
-        race: race,
-        characterClass: event.target.characterClass.value,
-        lvl: parseInt(event.target.lvl.value),
-        str: str,
-        dex: dex,
-        con: con,
-        int: int,
-        wis: wis,
-        cha: cha,
-        speed: speed
-      });
+      name: event.target.name.value,
+      race: race,
+      characterClass: event.target.characterClass.value,
+      lvl: parseInt(event.target.lvl.value),
+      str: str,
+      dex: dex,
+      con: con,
+      int: int,
+      wis: wis,
+      cha: cha,
+      speed: speed,
+      acrobatics: acrobatics,
+      insight: insight,
+      religion: religion
+    });
       
   }
-  return(
+      
+
+ return(
     <React.Fragment>
-      <ReusableForm
         formSubmissionHandler={addCharacterToFirestore}
         buttonText="Add Character" />
     </React.Fragment>
