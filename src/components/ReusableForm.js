@@ -46,7 +46,6 @@ function ReusableForm(props){
           <option value="Knight">Knight</option>
           <option value="Noble">Noble</option>
           <option value="Outlander">Outlander</option>
-          <option value="Pirate">Pirate</option>
           <option value="Sage">Sage</option>
           <option value="Sailor">Sailor</option>
           <option value="Soldier">Soldier</option>

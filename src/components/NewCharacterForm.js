@@ -75,6 +75,48 @@ function NewCharacterForm(props){
     if (background === "Acolyte"){
       insight += 2
       religion += 2
+    }else if (background === "Charlatan"){
+      deception += 2
+      sleightOfHand += 2
+    }else if (background === "Criminal"){
+      deception += 2
+      stealth += 2
+    }else if (background === "Entertainer"){
+      acrobatics += 2
+      performance += 2
+    }else if (background === "Folk Hero"){
+      animalHandling += 2
+      survival += 2
+    }else if (background === "Gladiator"){
+      acrobatics += 2
+      performance += 2
+    }else if (background === "Guild Merchant"){
+      insight += 2
+      persuasion += 2
+    }else if (background === "Hermit"){
+      medicine += 2
+      religion += 2
+    }else if (background === "Knight"){
+      athletics += 2
+      religion+= 2
+    }else if (background === "Noble"){
+      history += 2
+      persuasion += 2
+    }else if (background === "Outlander"){
+      athletics += 2
+      survival += 2
+    }else if (background === "Sage"){
+      arcana += 2
+      history += 2
+    }else if (background === "Sailor"){
+      athletics += 2
+      perception += 2
+    }else if (background === "Soldier"){
+      athletics += 2
+      intimidation += 2
+    }else if (background === "Urchin"){
+      sleightOfHand += 2
+      stealth += 2
     }
     
 
