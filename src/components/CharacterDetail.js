@@ -26,7 +26,9 @@ function CharacterDetail(props) {
       <h3>Race: {character.race}</h3>
       <h3>Level: {character.lvl}</h3>
       <h3>Background: {character.background}</h3>
-
+      <h3>Hit Points: {character.hp}</h3>
+      <h3>Hit Die: {character.hitDie}</h3>
+      
       <h3>Strength: {character.str}</h3>
       <h3>Dexterity: {character.dex}</h3>
       <h3>Constitution {character.con}</h3>
@@ -55,6 +57,7 @@ function CharacterDetail(props) {
       <h3>Medicine: {character.medicine}</h3>
       <h3>Nature: {character.nature}</h3>
       <h3>Perception: {character.perception}</h3>
+      <h3>Performance: {character.performance}</h3>
       <h3>Persuasion: {character.persuasion}</h3>
       <h3>Religion: {character.religion}</h3>
       <h3>Sleight of Hand: {character.sleightOfHand}</h3>

@@ -11,60 +11,81 @@ function NewCharacterForm(props){
     event.preventDefault();
     setform(!visibleForm);
     
+    function skillMod(rawScore){
+      console.log(rawScore)
+      if(rawScore === 20){
+        console.log("hit")
+        return 5
+      }else if(rawScore >= 18 && rawScore <= 19){
+        console.log("hit")
+        return 4
+      }else if(rawScore >= 16 && rawScore <= 17){
+        console.log("hit")
+        return 3
+      }else if(rawScore >= 14 && rawScore <= 15){
+        console.log("hit")
+        return 2
+      }else if(rawScore >= 12 && rawScore <= 13){
+        console.log("hit")
+        return 1
+      }else if(rawScore >= 10 && rawScore <= 11){
+        console.log("hit")
+        return 0
+      }else if(rawScore >= 8 && rawScore <= 9){
+        console.log("hit")
+        return -1
+      }else if(rawScore >= 6 && rawScore <= 7){
+        console.log("hit")
+        return -2
+      }else if(rawScore >= 4 && rawScore <= 5){
+        console.log("hit")
+        return -3
+      }else if(rawScore >= 2 && rawScore <= 3){
+        console.log("hit")
+        return -4
+      }else{
+        return -5
+      }
+    }
+    let characterClass = event.target.characterClass.value
     let race = event.target.race.value
     let background = event.target.background.value
+    let hitDie = 0
+    let hp = 0
+    
     let str = parseInt(event.target.str.value)
     let dex = parseInt(event.target.str.value)
     let con = parseInt(event.target.str.value)
     let int = parseInt(event.target.str.value)
     let wis = parseInt(event.target.str.value)
     let cha = parseInt(event.target.str.value)
+    let strMod = skillMod(str)
+    let dexMod = skillMod(dex)
+    let conMod = skillMod(con)
+    let intMod = skillMod(int)
+    let wisMod = skillMod(wis)
+    let chaMod = skillMod(cha)
     let speed = 30
 
     // SKILL PROFICIENCIES ----------------------------------------------
-    let acrobatics = 0
-    let animalHandling = 0
-    let arcana = 0
-    let athletics = 0
-    let deception = 0
-    let history = 0
-    let insight = 0
-    let intimidation = 0
-    let investigation = 0
-    let medicine = 0
-    let nature = 0
-    let perception = 0
-    let persuasion = 0
-    let religion = 0
-    let sleightOfHand = 0
-    let stealth = 0
-    let survival = 0
-
-    function skillMod(rawScore){
-      if(rawScore = 20){
-        return 5
-      }else if(rawScore >= 18 && rawScore <= 19){
-        return 4
-      }else if(rawScore >= 16 && rawScore <= 17){
-        return 3
-      }else if(rawScore >= 14 && rawScore <= 15){
-        return 2
-      }else if(rawScore >= 12 && rawScore <= 13){
-        return 1
-      }else if(rawScore >= 10 && rawScore <= 11){
-        return 0
-      }else if(rawScore >= 8 && rawScore <= 9){
-        return -1
-      }else if(rawScore >= 6 && rawScore <= 7){
-        return -2
-      }else if(rawScore >= 4 && rawScore <= 5){
-        return -3
-      }else if(rawScore >= 2 && rawScore <= 3){
-        return -4
-      }else{
-        return -5
-      }
-    }
+    let acrobatics = dexMod
+    let animalHandling = wisMod
+    let arcana = intMod
+    let athletics = strMod
+    let deception = chaMod
+    let history = intMod
+    let insight = wisMod
+    let intimidation = chaMod
+    let investigation = intMod
+    let medicine = wisMod
+    let nature = intMod
+    let perception = wisMod
+    let persuasion = chaMod
+    let performance = chaMod
+    let religion = intMod
+    let sleightOfHand = dexMod
+    let stealth = dexMod
+    let survival = wisMod
     
     if(race === 'Human'){
       str ++
@@ -144,7 +165,11 @@ function NewCharacterForm(props){
       sleightOfHand += 2
       stealth += 2
     }
-    
+
+    if(characterClass ==='Barbarian'){
+      hitDie = 12
+      hp = (hitDie + conMod)
+    }
 
     return firestore.collection('characters').add({
       name: event.target.name.value,
@@ -152,18 +177,20 @@ function NewCharacterForm(props){
       characterClass: event.target.characterClass.value,
       lvl: parseInt(event.target.lvl.value),
       background: event.target.background.value,
+      hitDie: hitDie,
+      hp: hp,
       str: str,
       dex: dex,
       con: con,
       int: int,
       wis: wis,
       cha: cha,
-      strMod: skillMod(str),
-      dexMod: skillMod(dex),
-      conMod: skillMod(con),
-      intMod: skillMod(int),
-      wisMod: skillMod(wis),
-      chaMod: skillMod(cha),
+      strMod: strMod,
+      dexMod: dexMod,
+      conMod: conMod,
+      intMod: intMod,
+      wisMod: wisMod,
+      chaMod: chaMod,
       speed: speed,
       acrobatics: acrobatics,
       animalHandling: animalHandling,
@@ -178,6 +205,7 @@ function NewCharacterForm(props){
       nature: nature,
       perception: perception,
       persuasion: persuasion,
+      performance: performance,
       religion: religion,
       sleightOfHand: sleightOfHand,
       stealth: stealth,
