@@ -39,6 +39,32 @@ function NewCharacterForm(props){
     let sleightOfHand = 0
     let stealth = 0
     let survival = 0
+
+    function skillMod(rawScore){
+      if(rawScore = 20){
+        return 5
+      }else if(rawScore >= 18 && rawScore <= 19){
+        return 4
+      }else if(rawScore >= 16 && rawScore <= 17){
+        return 3
+      }else if(rawScore >= 14 && rawScore <= 15){
+        return 2
+      }else if(rawScore >= 12 && rawScore <= 13){
+        return 1
+      }else if(rawScore >= 10 && rawScore <= 11){
+        return 0
+      }else if(rawScore >= 8 && rawScore <= 9){
+        return -1
+      }else if(rawScore >= 6 && rawScore <= 7){
+        return -2
+      }else if(rawScore >= 4 && rawScore <= 5){
+        return -3
+      }else if(rawScore >= 2 && rawScore <= 3){
+        return -4
+      }else{
+        return -5
+      }
+    }
     
     if(race === 'Human'){
       str ++
@@ -125,16 +151,37 @@ function NewCharacterForm(props){
       race: race,
       characterClass: event.target.characterClass.value,
       lvl: parseInt(event.target.lvl.value),
+      background: event.target.background.value,
       str: str,
       dex: dex,
       con: con,
       int: int,
       wis: wis,
       cha: cha,
+      strMod: skillMod(str),
+      dexMod: skillMod(dex),
+      conMod: skillMod(con),
+      intMod: skillMod(int),
+      wisMod: skillMod(wis),
+      chaMod: skillMod(cha),
       speed: speed,
       acrobatics: acrobatics,
+      animalHandling: animalHandling,
+      arcana: arcana,
+      athletics: athletics,
+      deception: deception,
+      history: history,
       insight: insight,
-      religion: religion
+      intimidation: intimidation,
+      investigation: investigation,
+      medicine: medicine,
+      nature: nature,
+      perception: perception,
+      persuasion: persuasion,
+      religion: religion,
+      sleightOfHand: sleightOfHand,
+      stealth: stealth,
+      survival: survival
     });
       
   }
