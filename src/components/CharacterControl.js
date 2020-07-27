@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import CharacterList from './CharacterList'
 import NewCharacterForm from './NewCharacterForm'
 import CharacterDetail from './CharacterDetail'
-import { withFirestore, isLoaded } from 'react-redux-firebase';
-import firebase from '../firebase';
+import { withFirestore} from 'react-redux-firebase';
 
 
 function CharacterControl(){
