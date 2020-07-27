@@ -11,17 +11,82 @@ function NewCharacterForm(props){
     event.preventDefault();
     setform(!visibleForm);
     
+    function skillMod(rawScore){
+      console.log(rawScore)
+      if(rawScore === 20){
+        console.log("hit")
+        return 5
+      }else if(rawScore >= 18 && rawScore <= 19){
+        console.log("hit")
+        return 4
+      }else if(rawScore >= 16 && rawScore <= 17){
+        console.log("hit")
+        return 3
+      }else if(rawScore >= 14 && rawScore <= 15){
+        console.log("hit")
+        return 2
+      }else if(rawScore >= 12 && rawScore <= 13){
+        console.log("hit")
+        return 1
+      }else if(rawScore >= 10 && rawScore <= 11){
+        console.log("hit")
+        return 0
+      }else if(rawScore >= 8 && rawScore <= 9){
+        console.log("hit")
+        return -1
+      }else if(rawScore >= 6 && rawScore <= 7){
+        console.log("hit")
+        return -2
+      }else if(rawScore >= 4 && rawScore <= 5){
+        console.log("hit")
+        return -3
+      }else if(rawScore >= 2 && rawScore <= 3){
+        console.log("hit")
+        return -4
+      }else{
+        return -5
+      }
+    }
+    let characterClass = event.target.characterClass.value
     let race = event.target.race.value
+    let background = event.target.background.value
+    let hitDie = 0
+    let hp = 0
+    
     let str = parseInt(event.target.str.value)
     let dex = parseInt(event.target.str.value)
     let con = parseInt(event.target.str.value)
     let int = parseInt(event.target.str.value)
     let wis = parseInt(event.target.str.value)
     let cha = parseInt(event.target.str.value)
+    let strMod = skillMod(str)
+    let dexMod = skillMod(dex)
+    let conMod = skillMod(con)
+    let intMod = skillMod(int)
+    let wisMod = skillMod(wis)
+    let chaMod = skillMod(cha)
     let speed = 30
-    let character= {
-      race: event.target.race.value
-    }
+
+    // SKILL PROFICIENCIES ----------------------------------------------
+    let acrobatics = dexMod
+    let animalHandling = wisMod
+    let arcana = intMod
+    let athletics = strMod
+    let deception = chaMod
+    let history = intMod
+    let insight = wisMod
+    let intimidation = chaMod
+    let investigation = intMod
+    let medicine = wisMod
+    let nature = intMod
+    let perception = wisMod
+    let persuasion = chaMod
+    let performance = chaMod
+    let religion = intMod
+    let sleightOfHand = dexMod
+    let stealth = dexMod
+    let survival = wisMod
+    
     if(race === 'Human'){
       str ++
       dex ++
@@ -54,22 +119,136 @@ function NewCharacterForm(props){
       cha += 2
     }
 
+    if (background === "Acolyte"){
+      insight += 2
+      religion += 2
+    }else if (background === "Charlatan"){
+      deception += 2
+      sleightOfHand += 2
+    }else if (background === "Criminal"){
+      deception += 2
+      stealth += 2
+    }else if (background === "Entertainer"){
+      acrobatics += 2
+      performance += 2
+    }else if (background === "Folk Hero"){
+      animalHandling += 2
+      survival += 2
+    }else if (background === "Gladiator"){
+      acrobatics += 2
+      performance += 2
+    }else if (background === "Guild Merchant"){
+      insight += 2
+      persuasion += 2
+    }else if (background === "Hermit"){
+      medicine += 2
+      religion += 2
+    }else if (background === "Knight"){
+      athletics += 2
+      religion+= 2
+    }else if (background === "Noble"){
+      history += 2
+      persuasion += 2
+    }else if (background === "Outlander"){
+      athletics += 2
+      survival += 2
+    }else if (background === "Sage"){
+      arcana += 2
+      history += 2
+    }else if (background === "Sailor"){
+      athletics += 2
+      perception += 2
+    }else if (background === "Soldier"){
+      athletics += 2
+      intimidation += 2
+    }else if (background === "Urchin"){
+      sleightOfHand += 2
+      stealth += 2
+    }
+
+    if(characterClass ==='Barbarian'){
+      hitDie = 12
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Bard'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Cleric'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Druid'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Fighter'){
+      hitDie = 10
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Monk'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Paladin'){
+      hitDie = 10
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Ranger'){
+      hitDie = 10
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Rouge'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Sorcerer'){
+      hitDie = 6
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Warlock'){
+      hitDie = 8
+      hp = (hitDie + conMod)
+    }else if(characterClass ==='Wizard'){
+      hitDie = 6
+      hp = (hitDie + conMod)
+    }
+
     return firestore.collection('characters').add({
-        name: event.target.name.value,
-        race: race,
-        characterClass: event.target.characterClass.value,
-        lvl: parseInt(event.target.lvl.value),
-        str: str,
-        dex: dex,
-        con: con,
-        int: int,
-        wis: wis,
-        cha: cha,
-        speed: speed
-      });
+      name: event.target.name.value,
+      race: race,
+      characterClass: characterClass,
+      lvl: parseInt(event.target.lvl.value),
+      background: background,
+      hitDie: hitDie,
+      hp: hp,
+      str: str,
+      dex: dex,
+      con: con,
+      int: int,
+      wis: wis,
+      cha: cha,
+      strMod: strMod,
+      dexMod: dexMod,
+      conMod: conMod,
+      intMod: intMod,
+      wisMod: wisMod,
+      chaMod: chaMod,
+      speed: speed,
+      acrobatics: acrobatics,
+      animalHandling: animalHandling,
+      arcana: arcana,
+      athletics: athletics,
+      deception: deception,
+      history: history,
+      insight: insight,
+      intimidation: intimidation,
+      investigation: investigation,
+      medicine: medicine,
+      nature: nature,
+      perception: perception,
+      persuasion: persuasion,
+      performance: performance,
+      religion: religion,
+      sleightOfHand: sleightOfHand,
+      stealth: stealth,
+      survival: survival
+    });
       
   }
-  return(
+      
+
+ return(
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler={addCharacterToFirestore}
