@@ -54,11 +54,11 @@ function NewCharacterForm(props){
     let hp = 0
     
     let str = parseInt(event.target.str.value)
-    let dex = parseInt(event.target.str.value)
-    let con = parseInt(event.target.str.value)
-    let int = parseInt(event.target.str.value)
-    let wis = parseInt(event.target.str.value)
-    let cha = parseInt(event.target.str.value)
+    let dex = parseInt(event.target.dex.value)
+    let con = parseInt(event.target.con.value)
+    let int = parseInt(event.target.int.value)
+    let wis = parseInt(event.target.wis.value)
+    let cha = parseInt(event.target.cha.value)
     let strMod = skillMod(str)
     let dexMod = skillMod(dex)
     let conMod = skillMod(con)
@@ -165,7 +165,7 @@ function NewCharacterForm(props){
       sleightOfHand += 2
       stealth += 2
     }
-
+// ADD SAVING THROW PROFICIENCIES TO EACH CLASS!! ----------------->
     if(characterClass ==='Barbarian'){
       hitDie = 12
       hp = (hitDie + conMod)
