@@ -5,15 +5,35 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("assets/images/dice.jpg");
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.header{
+
+.bungee{
   font-family: 'Bungee Shade', cursive;
-  
+}
+.header{
   font-weight: 700;
   font-size: 70px;
+}
+.navigation{
+  font-weight: 700;
+  font-size: 32px;
+  margin: 15 px;
+}
+.flexContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
 }

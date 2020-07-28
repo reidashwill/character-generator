@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 function Header(){
   return (
     <React.Fragment>
-      <h1 className="header">D&D CHARACTER VAULT</h1>
-      <Link to="/">Home</Link>
-      <br />
-      <Link to="/signin">Sign In</Link>
+      <div className='flexContainer'>
+        <h1 className="header bungee">D&D CHARACTER VAULT</h1>
+      </div>
+      <div className='flexContainer'>
+        <Link className='bungee navigation' to="/">Home</Link>
+        <Link className='bungee navigation' to="/signin">Sign In</Link>
+      </div>
     </React.Fragment>
   );
 }
