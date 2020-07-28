@@ -51,6 +51,19 @@ function ReusableForm(props){
           <option value="Soldier">Soldier</option>
           <option value="Urchin">Urchin</option>       
         </select><br/>
+        <label>Alignment </label>
+        <select name='alignment'>
+          <option value="Lawful Good">Lawful Good</option>
+          <option value="Neutral Good">Neutral Good</option>
+          <option value="Chaotic Good">Chaotic Good</option>
+          <option value="Lawful Neutral">Lawful Neutral</option>
+          <option value="Neutral">Neutral</option>
+          <option value="Chaotic Neutral">Chaotic Neutral</option>
+          <option value="Lawful Evil">Lawful Evil</option>
+          <option value="Neutral Evil">Neutral Evil</option>
+          <option value="Chaotic Evil">Chaotic Evil</option>
+          <option value="Unaligned">Unaligned</option>       
+        </select><br/>
         <label>Level </label>
         <select name='lvl'>
           <option value="1">1</option>
@@ -81,6 +94,9 @@ function ReusableForm(props){
         <input type='number' name='wis' placeholder='Wisdom' />
         <input type='number' name='cha' placeholder='Charisma' />
 
+        <input type='text' name='physicalAppearance' placeholder='Physical Apprearance' />
+        <input type='text' name='personalityTraits' placeholder='Personality Traits' />
+        <input type='text' name='bondsFlaws' placeholder='Bonds and Flaws' />
         
         <button type='submit'>{props.buttonText}</button>
       </form>

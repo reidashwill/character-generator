@@ -50,6 +50,7 @@ function NewCharacterForm(props){
     let characterClass = event.target.characterClass.value
     let race = event.target.race.value
     let background = event.target.background.value
+    let alignment = event.target.alignment.value
     let hitDie = 0
     let hp = 0
     
@@ -210,7 +211,9 @@ function NewCharacterForm(props){
       characterClass: characterClass,
       lvl: parseInt(event.target.lvl.value),
       background: background,
+      alignment: alignment,
       hitDie: hitDie,
+      initiative: dexMod,
       hp: hp,
       str: str,
       dex: dex,
@@ -242,7 +245,10 @@ function NewCharacterForm(props){
       religion: religion,
       sleightOfHand: sleightOfHand,
       stealth: stealth,
-      survival: survival
+      survival: survival,
+      physicalApprearance: event.target.physicalAppearance.value,
+      personalityTraits: event.target.personalityTraits.value,
+      bondsFlaws: event.target.bondsFlaws.value
     });
       
   }

@@ -24,11 +24,13 @@ function CharacterDetail(props) {
       <h1>Name: {character.name}</h1>
       <h3>Class: {character.characterClass}</h3>
       <h3>Race: {character.race}</h3>
+      <h3>Alignment: {character.alignment} </h3>
       <h3>Level: {character.lvl}</h3>
       <h3>Background: {character.background}</h3>
       <h3>Hit Points: {character.hp}</h3>
       <h3>Hit Die: {character.hitDie}</h3>
-      
+      <h3>Initiative: {character.initiative}</h3>
+
       <h3>Strength: {character.str}</h3>
       <h3>Dexterity: {character.dex}</h3>
       <h3>Constitution {character.con}</h3>
@@ -63,6 +65,13 @@ function CharacterDetail(props) {
       <h3>Sleight of Hand: {character.sleightOfHand}</h3>
       <h3>Stealth: {character.stealth}</h3>
       <h3>Survival: {character.survival}</h3>
+
+      <h3>Physical Appearance:</h3>
+      <p>{character.physicalApprearance}</p>
+      <h3>Personality Traits:</h3>
+      <p>{character.personalityTraits}</p>
+      <h3>Bonds and Flaws:</h3>
+      <p>{character.bondsFlaws}</p>
       
       
       <button onClick={ () => handleDeletingCharacter(selectedCharacter)}>Delete Character</button>
