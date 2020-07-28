@@ -213,6 +213,7 @@ function NewCharacterForm(props){
       background: background,
       alignment: alignment,
       hitDie: hitDie,
+      initiative: dexMod,
       hp: hp,
       str: str,
       dex: dex,
@@ -244,7 +245,10 @@ function NewCharacterForm(props){
       religion: religion,
       sleightOfHand: sleightOfHand,
       stealth: stealth,
-      survival: survival
+      survival: survival,
+      physicalApprearance: event.target.physicalAppearance.value,
+      personalityTraits: event.target.personalityTraits.value,
+      bondsFlaws: event.target.bondsFlaws.value
     });
       
   }

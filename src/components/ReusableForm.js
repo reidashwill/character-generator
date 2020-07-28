@@ -94,6 +94,9 @@ function ReusableForm(props){
         <input type='number' name='wis' placeholder='Wisdom' />
         <input type='number' name='cha' placeholder='Charisma' />
 
+        <input type='text' name='physicalAppearance' placeholder='Physical Apprearance' />
+        <input type='text' name='personalityTraits' placeholder='Personality Traits' />
+        <input type='text' name='bondsFlaws' placeholder='Bonds and Flaws' />
         
         <button type='submit'>{props.buttonText}</button>
       </form>
