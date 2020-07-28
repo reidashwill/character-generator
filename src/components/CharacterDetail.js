@@ -24,6 +24,7 @@ function CharacterDetail(props) {
       <h1>Name: {character.name}</h1>
       <h3>Class: {character.characterClass}</h3>
       <h3>Race: {character.race}</h3>
+      <h3>Alignment: {character.alignment} </h3>
       <h3>Level: {character.lvl}</h3>
       <h3>Background: {character.background}</h3>
       <h3>Hit Points: {character.hp}</h3>

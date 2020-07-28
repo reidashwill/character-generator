@@ -50,6 +50,7 @@ function NewCharacterForm(props){
     let characterClass = event.target.characterClass.value
     let race = event.target.race.value
     let background = event.target.background.value
+    let alignment = event.target.alignment.value
     let hitDie = 0
     let hp = 0
     
@@ -210,6 +211,7 @@ function NewCharacterForm(props){
       characterClass: characterClass,
       lvl: parseInt(event.target.lvl.value),
       background: background,
+      alignment: alignment,
       hitDie: hitDie,
       hp: hp,
       str: str,
