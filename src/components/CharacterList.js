@@ -2,20 +2,27 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import Character from './Character'
+import firebase from '../firebase';
 
 function CharacterList(props){
   useFirestoreConnect([{collection: 'characters'}]);
   const characters = useSelector(state => state.firestore.ordered.characters);
   if(isLoaded(characters)){
     const {setSelectedCharacter} = props
+
+    const user = firebase.auth().currentUser;
+    console.log(user.email)
+
     return(
       <React.Fragment>
         {characters.map((character) => {
-          return <Character
-          whenCharacterClicked = {setSelectedCharacter}
-          name={character.name}
-          id={character.id}
-          key={character.id}/>
+          if(character.userEmail === user.email){
+            return <Character
+            whenCharacterClicked = {setSelectedCharacter}
+            name={character.name}
+            id={character.id}
+            key={character.id}/>
+          }
         })}
       </React.Fragment>
     )

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReusableForm from './ReusableForm';
 import { useFirestore } from 'react-redux-firebase';
+import firebase from '../firebase';
 
 function NewCharacterForm(props){
   const {setform, visibleForm} = props
@@ -10,38 +11,30 @@ function NewCharacterForm(props){
   function addCharacterToFirestore(event) {
     event.preventDefault();
     setform(!visibleForm);
+    const user = firebase.auth().currentUser;
+    console.log(user)
     
     function skillMod(rawScore){
       console.log(rawScore)
       if(rawScore === 20){
-        console.log("hit")
         return 5
       }else if(rawScore >= 18 && rawScore <= 19){
-        console.log("hit")
         return 4
       }else if(rawScore >= 16 && rawScore <= 17){
-        console.log("hit")
         return 3
       }else if(rawScore >= 14 && rawScore <= 15){
-        console.log("hit")
         return 2
       }else if(rawScore >= 12 && rawScore <= 13){
-        console.log("hit")
         return 1
       }else if(rawScore >= 10 && rawScore <= 11){
-        console.log("hit")
         return 0
       }else if(rawScore >= 8 && rawScore <= 9){
-        console.log("hit")
         return -1
       }else if(rawScore >= 6 && rawScore <= 7){
-        console.log("hit")
         return -2
       }else if(rawScore >= 4 && rawScore <= 5){
-        console.log("hit")
         return -3
       }else if(rawScore >= 2 && rawScore <= 3){
-        console.log("hit")
         return -4
       }else{
         return -5
@@ -69,6 +62,7 @@ function NewCharacterForm(props){
     let speed = 30
 
     // SKILL PROFICIENCIES ----------------------------------------------
+    
     let acrobatics = dexMod
     let animalHandling = wisMod
     let arcana = intMod
@@ -248,7 +242,8 @@ function NewCharacterForm(props){
       survival: survival,
       physicalApprearance: event.target.physicalAppearance.value,
       personalityTraits: event.target.personalityTraits.value,
-      bondsFlaws: event.target.bondsFlaws.value
+      bondsFlaws: event.target.bondsFlaws.value,
+      userEmail: user.email
     });
       
   }

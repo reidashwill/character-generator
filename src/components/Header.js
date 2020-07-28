@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Header(){
-  return(
-    <h1>Character Generator</h1>
-  )
+  return (
+    <React.Fragment>
+      <h1>Character Generator</h1>
+      <Link to="/">Home</Link>
+      <br />
+      <Link to="/signin">Sign In</Link>
+    </React.Fragment>
+  );
 }
 export default Header
