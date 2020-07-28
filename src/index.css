@@ -44,4 +44,9 @@ input{
 }
 select{
   background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.genStats{
+  font-family: 'Montserrat', sans-serif;
 }
