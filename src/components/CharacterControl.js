@@ -55,7 +55,7 @@ function CharacterControl(){
     )
   } else {
     return(
-      <p>Please sign in</p>
+      <p></p>
 
     )
   }

@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("assets/images/dice.jpg");
+  background-image: url("assets/images/dice.JPG");
+  background-size: cover;
 }
 
 code {
@@ -36,4 +37,10 @@ code {
 a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
+}
+input{
+  background-color: transparent;
+}
+select{
+  background-color: transparent;
 }
