@@ -4,6 +4,7 @@ import NewCharacterForm from './NewCharacterForm'
 import CharacterDetail from './CharacterDetail'
 import { withFirestore } from 'react-redux-firebase';
 import firebase from '../firebase';
+import 'firebase/auth';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -25,8 +26,16 @@ function CharacterControl(){
   }
   const user = firebase.auth().currentUser;
   console.log(user)
+  // firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+  //     var email = user.email;
+  //     var uid = user.uid
+  //     console.log(email)
+  //     console.log (uid)
+    
+    
   
-  if (user) {
+  
 
     if(selectedCharacterId !==null){
       currentlyVisibleState = <CharacterDetail setSelectedCharacter = {setSelectedCharacter} selectedCharacter = {selectedCharacterId} />
@@ -50,6 +59,7 @@ function CharacterControl(){
 
     )
   }
+// })
 }
 
 export default withFirestore(CharacterControl);

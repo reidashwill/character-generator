@@ -11,16 +11,18 @@ function CharacterList(props){
     const {setSelectedCharacter} = props
 
     const user = firebase.auth().currentUser;
-    console.log(user)
-    
+    console.log(user.email)
+
     return(
       <React.Fragment>
         {characters.map((character) => {
-          return <Character
-          whenCharacterClicked = {setSelectedCharacter}
-          name={character.name}
-          id={character.id}
-          key={character.id}/>
+          if(character.userEmail === user.email){
+            return <Character
+            whenCharacterClicked = {setSelectedCharacter}
+            name={character.name}
+            id={character.id}
+            key={character.id}/>
+          }
         })}
       </React.Fragment>
     )

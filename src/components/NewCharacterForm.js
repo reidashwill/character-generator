@@ -12,7 +12,7 @@ function NewCharacterForm(props){
     event.preventDefault();
     setform(!visibleForm);
     const user = firebase.auth().currentUser;
-    console.log(user.email)
+    console.log(user)
     
     function skillMod(rawScore){
       console.log(rawScore)
@@ -243,7 +243,7 @@ function NewCharacterForm(props){
       physicalApprearance: event.target.physicalAppearance.value,
       personalityTraits: event.target.personalityTraits.value,
       bondsFlaws: event.target.bondsFlaws.value,
-      userId: user.email
+      userEmail: user.email
     });
       
   }
