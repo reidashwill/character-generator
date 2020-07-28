@@ -21,6 +21,7 @@ function CharacterDetail(props) {
   ) 
   return ( 
     <React.Fragment>
+      
       <h1>Name: {character.name}</h1>
       <h3>Class: {character.characterClass}</h3>
       <h3>Race: {character.race}</h3>
