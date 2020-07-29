@@ -15,6 +15,10 @@ function CharacterList(props){
 
     return(
       <React.Fragment>
+        <div className="splash flexTopRow">
+          <p>We believe that one of the biggest barriers to entry for new Dungeons and Dragons players is the character creation process.  Our response to this was to make a free and easy to use tool to create your own characters easily!  All you have to do is pick and Name, Class, Race, background, and then roll the die a few times!  We'll take care of the rest.</p>
+        </div>
+        
         {characters.map((character) => {
           if(character.userEmail === user.email){
             return <Character
@@ -29,7 +33,7 @@ function CharacterList(props){
   }else{
     return(
       <React.Fragment>
-        <h1>Hold onto your butts!</h1>
+        <h1>Gathering the Heroes</h1>
       </React.Fragment>
     )
   }  

@@ -38,7 +38,7 @@ code {
   width: 98vw;
   border: double;
   margin: 5px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   flex: 1;
 }
 
@@ -47,27 +47,36 @@ code {
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  width: 50vw;
+  width: 70vw;
   border: double;
   margin: 5px;
   flex-wrap: wrap;
-  flex: 1;
+  
 }
 .flexCol{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 15vw;
+  width: 25vw;
   border: double;
   margin: 5px;
-  flex: 10%;
+  /* flex: 5%; */
 }
 
 .charSheet{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+.accountFields{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 15px;
 }
 
 a:-webkit-any-link {
@@ -85,4 +94,21 @@ select{
 .genStats{
   font-family: 'Montserrat', sans-serif;
   margin: 5px;
+}
+
+button{
+  box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #e3ffba 5%, #bd8224 100%);
+	background-color:#e3ffba;
+	border-radius:6px;
+	border:1px solid #b88437;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
 }

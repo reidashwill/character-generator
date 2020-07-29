@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import 'firebase/auth';
+import firebase from '../firebase';
 
 function Header(){
   return (
@@ -9,7 +11,7 @@ function Header(){
       </div>
       <div className='flexTopRow'>
         <Link className='bungee navigation' to="/">Home</Link>
-        <Link className='bungee navigation' to="/signin">Sign In</Link>
+        <Link className='bungee navigation' to="/signin">Account</Link>
       </div>
     </React.Fragment>
   );
