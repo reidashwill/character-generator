@@ -235,7 +235,9 @@ function ReusableForm(props){
               <input type='number' name='cha' placeholder='Charisma' /> */}
               <p>Physical Appearance</p>
               <textarea rows='15' type='text' name='physicalAppearance' placeholder='Physical Apprearance' />
+              <p>Personality Traits</p>
               <textarea type='text' name='personalityTraits' placeholder='Personality Traits' />
+              <p>Bonds and Flaws</p>
               <textarea type='text' name='bondsFlaws' placeholder='Bonds and Flaws' />
               
               <button type='submit'>{props.buttonText}</button>
