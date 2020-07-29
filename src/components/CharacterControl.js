@@ -5,14 +5,12 @@ import CharacterDetail from './CharacterDetail'
 import { withFirestore } from 'react-redux-firebase';
 import firebase from '../firebase';
 import 'firebase/auth';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 
 function CharacterControl(){
   let currentlyVisibleState = null
   let buttonText = null
-  // const [editing, setEditing] = useState(false)
   const [selectedCharacterId, setSelectedCharacter] = useState(null)
   const [visibleForm, setForm] = useState(false);
 
