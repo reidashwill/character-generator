@@ -6,10 +6,6 @@ body {
   background-image: url("assets/images/dice.JPG");
   background-size: cover;
   height: 500vh;
-  /* display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-start; */
 }
 
 code {
