@@ -203,7 +203,7 @@ function NewCharacterForm(props){
       name: event.target.name.value,
       race: race,
       characterClass: characterClass,
-      lvl: parseInt(event.target.lvl.value),
+      // lvl: parseInt(event.target.lvl.value),
       background: background,
       alignment: alignment,
       hitDie: hitDie,
