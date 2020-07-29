@@ -74,7 +74,7 @@ code {
   flex-direction: column;
   /* justify-content: space-around; */
   align-items: center;
-  width: 25vw;
+  width: 50vw;
   border: double;
   margin: 5px;
   /* flex: 5%; */
@@ -110,8 +110,8 @@ textarea{
   background-color: transparent;
   outline: none;
   resize: both;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 45vw;
+  max-width: 45vw;
   max-height: 500px;
   min-height: 200px;
 }
