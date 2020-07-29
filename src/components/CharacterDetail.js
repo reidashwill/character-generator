@@ -32,24 +32,48 @@ function CharacterDetail(props) {
         </div>
         <div className='charSheet'>
         <div className='genStats flexCol'>
-          <h3>Acrobatics: {character.acrobatics}</h3>
-          <h3>Animal Handling: {character.animalHandling}</h3>
-          <h3>Arcana: {character.arcana}</h3>
-          <h3>Athletics: {character.athletics}</h3>
-          <h3>Deception: {character.deception}</h3>
-          <h3>History: {character.history}</h3>
-          <h3>Insight: {character.insight}</h3>
-          <h3>Intimidation: {character.intimidation} </h3>
-          <h3>Investigation: {character.investigation}</h3>
-          <h3>Medicine: {character.medicine}</h3>
-          <h3>Nature: {character.nature}</h3>
-          <h3>Perception: {character.perception}</h3>
-          <h3>Performance: {character.performance}</h3>
-          <h3>Persuasion: {character.persuasion}</h3>
-          <h3>Religion: {character.religion}</h3>
-          <h3>Sleight of Hand: {character.sleightOfHand}</h3>
-          <h3>Stealth: {character.stealth}</h3>
-          <h3>Survival: {character.survival}</h3>
+          <div>
+            <h3>Skill Proficiencies:</h3>
+            <h3>Acrobatics:</h3>
+            <h3>Animal Handling:</h3>
+            <h3>Arcana: </h3>
+            <h3>Athletics: </h3>
+            <h3>Deception: </h3>
+            <h3>History: </h3>
+            <h3>Insight: </h3>
+            <h3>Intimidation:  </h3>
+            <h3>Investigation: </h3>
+            <h3>Medicine: </h3>
+            <h3>Nature: </h3>
+            <h3>Perception: </h3>
+            <h3>Performance: </h3>
+            <h3>Persuasion: </h3>
+            <h3>Religion: </h3>
+            <h3>Sleight of Hand: </h3>
+            <h3>Stealth: </h3>
+            <h3>Survival: </h3>
+          </div>
+          <div>
+            <h3 className='hidden'>-</h3>
+            <h3>{character.acrobatics}</h3>
+            <h3>{character.animalHandling}</h3>
+            <h3>{character.arcana}</h3>
+            <h3>{character.athletics}</h3>
+            <h3>{character.deception}</h3>
+            <h3>{character.history}</h3>
+            <h3>{character.insight}</h3>
+            <h3>{character.intimidation} </h3>
+            <h3>{character.investigation}</h3>
+            <h3>{character.medicine}</h3>
+            <h3>{character.nature}</h3>
+            <h3>{character.perception}</h3>
+            <h3>{character.performance}</h3>
+            <h3>{character.persuasion}</h3>
+            <h3>{character.religion}</h3>
+            <h3>{character.sleightOfHand}</h3>
+            <h3>{character.stealth}</h3>
+            <h3>{character.survival}</h3>
+          </div>  
         </div>
         <div className='genStats flexSubRow'>
         <div className='genStats flexSubRow'>

@@ -28,11 +28,6 @@ function CharacterControl(){
   console.log(user)
   
     // if (user) {
- 
-    
-    
-  
-  
 
     if(selectedCharacterId !==null){
       currentlyVisibleState = <CharacterDetail setSelectedCharacter = {setSelectedCharacter} selectedCharacter = {selectedCharacterId} />
