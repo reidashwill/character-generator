@@ -25,7 +25,7 @@ function CharacterControl(){
   const user = firebase.auth().currentUser;
   console.log(user)
   
-    // if (user) {
+    if (user) {
 
     if(selectedCharacterId !==null){
       currentlyVisibleState = <CharacterDetail setSelectedCharacter = {setSelectedCharacter} selectedCharacter = {selectedCharacterId} />
@@ -45,12 +45,12 @@ function CharacterControl(){
         </div>
       </React.Fragment>
     )
-  // } else {
-  //   return(
-  //     <p></p>
+  } else {
+    return(
+      <p></p>
 
-  //   )
-  // }
+    )
+  }
 
 }
 
