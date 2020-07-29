@@ -15,10 +15,11 @@ function CharacterList(props){
 
     return(
       <React.Fragment>
-        <div className="splash flexTopRow">
+        <div className="charSheet">
+        <div className="splash">
           <p>We believe that one of the biggest barriers to entry for new Dungeons and Dragons players is the character creation process.  Our response to this was to make a free and easy to use tool to create your own characters easily!  All you have to do is pick and Name, Class, Race, background, and then roll the die a few times!  We'll take care of the rest.</p>
         </div>
-        
+        </div>
         {characters.map((character) => {
           if(character.userEmail === user.email){
             return <Character

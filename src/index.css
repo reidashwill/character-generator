@@ -6,10 +6,10 @@ body {
   background-image: url("assets/images/dice.JPG");
   background-size: cover;
   height: 500vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: flex-start; */
 }
 
 code {
@@ -40,6 +40,14 @@ code {
   margin: 5px;
   /* flex-wrap: wrap; */
   flex: 1;
+}
+
+.splash{
+  display: flex;
+  width: 75vw;
+  border: double;
+  margin: 5px;
+  padding: 10px;
 }
 
 .flexSubRow{
@@ -81,7 +89,7 @@ code {
 
 a:-webkit-any-link {
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 input{
   background-color: transparent;
@@ -111,4 +119,8 @@ button{
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffee66;
+}
+
+h1, h3, p{
+  color: white;
 }
