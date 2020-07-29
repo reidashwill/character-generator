@@ -26,12 +26,9 @@ function CharacterControl(){
   }
   const user = firebase.auth().currentUser;
   console.log(user)
-  // firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-  //     var email = user.email;
-  //     var uid = user.uid
-  //     console.log(email)
-  //     console.log (uid)
+  
+    // if (user) {
+ 
     
     
   
@@ -50,16 +47,18 @@ function CharacterControl(){
     return(
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={ () => returnToList() }>{buttonText}</button>
+        <div className="charSheet">
+          <button onClick={ () => returnToList() }>{buttonText}</button>
+        </div>
       </React.Fragment>
     )
-  } else {
-    return(
-      <p>Please sign in</p>
+  // } else {
+  //   return(
+  //     <p></p>
 
-    )
-  }
-// })
+  //   )
+  // }
+
 }
 
 export default withFirestore(CharacterControl);

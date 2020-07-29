@@ -43,20 +43,23 @@ function Signin(){
 
     <React.Fragment>
       {redirect}
-      <h1>Sign Up</h1>
-      <form onSubmit={doSignUp}>
-        <input
-          type='text'
-          name='email'
-          placeholder='Email'/>
-        <input
-          type='password'
-          name='password'
-          placeholder='Password' />
-          <button type='submit'>Sign Up</button>
-      </form>
-  
-      <h1>Sign In</h1>
+      <div className='accountFields'>
+        {/* <h1>Sign Up</h1> */}
+      
+        <form onSubmit={doSignUp}>
+          <input
+            type='text'
+            name='email'
+            placeholder='Email'/>
+          <input
+            type='password'
+            name='password'
+            placeholder='Password' />
+            <button type='submit'>Sign Up</button>
+        </form>
+      </div>
+
+      <div className='accountFields'>
       <form onSubmit={doSignIn}>
         <input
           type='text'
@@ -68,7 +71,10 @@ function Signin(){
         placeholder='Password' />
         <button type='submit'>Sign In</button>
       </form>
+      </div>
+      <div className='accountFields'>
       <button onClick={doSignOut}>Sign Out</button>
+      </div>
     </React.Fragment>
   );
   
