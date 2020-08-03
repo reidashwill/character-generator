@@ -46,6 +46,7 @@ function NewCharacterForm(props){
     let alignment = event.target.alignment.value
     let hitDie = 0
     let hp = 0
+    let speed = 30
     
     let str = parseInt(event.target.str.value)
     let dex = parseInt(event.target.dex.value)
@@ -53,35 +54,7 @@ function NewCharacterForm(props){
     let int = parseInt(event.target.int.value)
     let wis = parseInt(event.target.wis.value)
     let cha = parseInt(event.target.cha.value)
-    let strMod = skillMod(str)
-    let dexMod = skillMod(dex)
-    let conMod = skillMod(con)
-    let intMod = skillMod(int)
-    let wisMod = skillMod(wis)
-    let chaMod = skillMod(cha)
-    let speed = 30
 
-    // SKILL PROFICIENCIES ----------------------------------------------
-    
-    let acrobatics = dexMod
-    let animalHandling = wisMod
-    let arcana = intMod
-    let athletics = strMod
-    let deception = chaMod
-    let history = intMod
-    let insight = wisMod
-    let intimidation = chaMod
-    let investigation = intMod
-    let medicine = wisMod
-    let nature = intMod
-    let perception = wisMod
-    let persuasion = chaMod
-    let performance = chaMod
-    let religion = intMod
-    let sleightOfHand = dexMod
-    let stealth = dexMod
-    let survival = wisMod
-    
     if(race === 'Human'){
       str ++
       dex ++
@@ -113,6 +86,66 @@ function NewCharacterForm(props){
       int ++
       cha += 2
     }
+
+    if(race === 'Human'){
+      str ++
+      dex ++
+      con ++
+      int ++
+      wis ++
+      cha ++
+    }else if(race === 'Dragonborn'){
+      str += 2
+      cha += 1
+    }else if(race ==='Dwarf'){
+      con += 2
+      speed = 25
+    }else if(race ==='Elf'){
+      dex += 2
+    }else if(race ==='Gnome'){
+      int += 2
+      speed = 25
+    }else if(race ==='Half-Elf'){
+      cha += 2
+      // need to figure out adding the other two skills up by one based on user choice...  or make it random??
+    }else if(race ==='Halfling'){
+      dex += 2
+      speed = 25
+    }else if(race ==='Half-Orc'){
+      str += 2
+      con ++
+    }else if(race ==='Tiefling'){
+      int ++
+      cha += 2
+    }
+
+    let strMod = skillMod(str)
+    let dexMod = skillMod(dex)
+    let conMod = skillMod(con)
+    let intMod = skillMod(int)
+    let wisMod = skillMod(wis)
+    let chaMod = skillMod(cha)
+
+    // SKILL PROFICIENCIES ----------------------------------------------
+    
+    let acrobatics = dexMod
+    let animalHandling = wisMod
+    let arcana = intMod
+    let athletics = strMod
+    let deception = chaMod
+    let history = intMod
+    let insight = wisMod
+    let intimidation = chaMod
+    let investigation = intMod
+    let medicine = wisMod
+    let nature = intMod
+    let perception = wisMod
+    let persuasion = chaMod
+    let performance = chaMod
+    let religion = intMod
+    let sleightOfHand = dexMod
+    let stealth = dexMod
+    let survival = wisMod
 
     if (background === "Acolyte"){
       insight += 2

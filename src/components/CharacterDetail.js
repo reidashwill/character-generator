@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestore, useFirestoreConnect} from 'react-redux-firebase';
 import 'firebase/firestore';
@@ -119,8 +118,5 @@ function CharacterDetail(props) {
   );
 }
 
-CharacterDetail.propTypes = {
-  character: PropTypes.object
-}
 
 export default CharacterDetail
