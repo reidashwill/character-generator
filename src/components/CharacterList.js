@@ -36,7 +36,7 @@ function CharacterList(props){
   }else{
     return(
       <React.Fragment>
-        <h1>Gathering the Heroes</h1>
+        {/* <h1>Gathering the Heroes</h1> */}
       </React.Fragment>
     )
   }  
